@@ -79,6 +79,31 @@ export const TrustAndFoodClaims: React.FC<TrustAndFoodClaimsProps> = ({
           </div>
         </div>
 
+        {/* Master Baker Craft Story with Real Photo */}
+        <div className="bg-[#EFE8DC] rounded-2xl p-6 sm:p-8 border border-[#DFD4C2] flex flex-col md:flex-row items-center gap-6 sm:gap-8 shadow-2xs">
+          <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden bg-stone-900 border-2 border-stone-300 shrink-0 shadow-sm">
+            <img
+              src="/images/owner.png"
+              alt="Lava Cakes Master Baker"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="space-y-2 text-center md:text-left flex-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#9A3412]">
+              Artisanal Dedication · Tamil Nadu
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-stone-900">
+              Baked by Passionate Master Pastry Chefs
+            </h3>
+            <p className="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl">
+              At Lava Cakes, every recipe is personally formulated and calibrated by our master pastry chefs. We reject industrial premixes and chemical shelf-life extenders. Each cake that leaves our ovens is freshly frosted with real dairy cream, Belgian chocolate, and pure butter so your family celebrations taste authentically exceptional.
+            </p>
+            <div className="text-xs text-stone-500 font-medium pt-1">
+              Serving Chennai, Coimbatore, Madurai, Salem, Trichy & Erode with pride.
+            </div>
+          </div>
+        </div>
+
         {/* Effortless Contact & Support Route (Item 09) */}
         <div className="bg-[#24140D] rounded-2xl p-6 sm:p-8 text-white flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center lg:text-left">

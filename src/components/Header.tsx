@@ -48,17 +48,24 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main 3-Zone Top Navigation Contract */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
-        {/* Zone 1: Brand Wordmark (Single text element in Playfair Display serif) */}
+        {/* Zone 1: Brand Wordmark & Official Emblem */}
         <button
           onClick={() => onNavigatePage('home')}
-          className="text-left group cursor-pointer shrink-0"
+          className="text-left group cursor-pointer shrink-0 flex items-center gap-2.5"
         >
-          <span className="text-2xl sm:text-3xl font-bold tracking-tight text-[#2B1810] font-display hover:text-[#9A3412] transition-colors whitespace-nowrap">
-            Lava Cakes
-          </span>
-          <span className="block text-[10px] tracking-wider uppercase text-stone-500 font-sans font-medium -mt-1">
-            Artisanal Tamil Nadu
-          </span>
+          <img
+            src="/images/logo-lavacakes.png"
+            alt="Lava Cakes Logo"
+            className="h-10 w-auto object-contain drop-shadow-2xs"
+          />
+          <div>
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-[#2B1810] font-display hover:text-[#9A3412] transition-colors whitespace-nowrap block leading-tight">
+              Lava Cakes
+            </span>
+            <span className="block text-[9px] tracking-wider uppercase text-stone-500 font-sans font-medium">
+              Artisanal Tamil Nadu
+            </span>
+          </div>
         </button>
 
         {/* Zone 2: 4-5 Concise Single-line Nav Links (Navigates between dedicated pages) */}

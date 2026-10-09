@@ -118,6 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Product Visual */}
               <div className="rounded-xl overflow-hidden relative aspect-[4/3] bg-stone-900">
                 <BakeryVisual
+                  src="/images/home-cake.png"
                   type="chocolate-lava"
                   title="Belgian Molten Chocolate Lava Cake"
                   className="w-full h-full"

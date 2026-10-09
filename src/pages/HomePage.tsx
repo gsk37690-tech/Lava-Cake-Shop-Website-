@@ -64,14 +64,14 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* 4 Clean Category Cards with Polished Copy */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CATEGORIES.filter(c => c.id !== 'custom').map(cat => {
-            const visualType =
+            const catImage =
               cat.id === 'cakes'
-                ? 'chocolate-lava'
+                ? '/images/home-cake.png'
                 : cat.id === 'cookies'
-                ? 'cookie'
+                ? '/images/why-cake.png'
                 : cat.id === 'bread'
-                ? 'bread'
-                : 'brownie';
+                ? '/images/product2.png'
+                : '/images/product3.png';
 
             return (
               <div
@@ -80,7 +80,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-2xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div className="relative aspect-[16/10] bg-stone-950 overflow-hidden">
-                  <BakeryVisual type={visualType as any} title={cat.name} className="w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                  <BakeryVisual src={catImage} title={cat.name} className="w-full h-full group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute top-2.5 left-2.5 bg-black/60 text-amber-200 text-[10px] font-semibold px-2 py-0.5 rounded backdrop-blur-xs">
                     from ₹{cat.startingPrice}
                   </div>
@@ -137,6 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               >
                 <div className="relative aspect-[4/3] bg-stone-950 overflow-hidden">
                   <BakeryVisual
+                    src={product.imageUrl}
                     type={product.visualTheme.cakeType}
                     title={product.name}
                     className="w-full h-full"

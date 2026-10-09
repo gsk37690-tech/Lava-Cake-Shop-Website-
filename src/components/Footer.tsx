@@ -20,9 +20,16 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="space-y-3">
             <button
               onClick={() => onNavigatePage('home')}
-              className="text-2xl font-bold font-display text-white tracking-tight hover:text-amber-400 transition-colors text-left"
+              className="flex items-center gap-3 text-left cursor-pointer group"
             >
-              Lava Cakes
+              <img
+                src="/images/logo-lavacakes.png"
+                alt="Lava Cakes Logo"
+                className="h-10 w-auto object-contain bg-white/10 rounded p-1"
+              />
+              <span className="text-2xl font-bold font-display text-white tracking-tight group-hover:text-amber-400 transition-colors">
+                Lava Cakes
+              </span>
             </button>
             <p className="text-xs text-stone-400 leading-relaxed">
               Tamil Nadu's premier artisanal bakery specializing in molten chocolate lava cakes, handcrafted celebration cakes, artisan breads, and gourmet cookies.

@@ -25,6 +25,7 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
   const [cakeMessage, setCakeMessage] = useState('');
   const [selectedThemePreset, setSelectedThemePreset] = useState('Midnight Gold Ganache');
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
+  const [uploadedPreviewUrl, setUploadedPreviewUrl] = useState<string | null>(null);
   const [deliveryDate, setDeliveryDate] = useState(() => {
     const d = new Date();
     d.setDate(d.getDate() + 1);
@@ -63,8 +64,19 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setUploadedFileName(e.target.files[0].name);
+      const file = e.target.files[0];
+      setUploadedFileName(file.name);
+      setUploadedPreviewUrl(URL.createObjectURL(file));
     }
+  };
+
+  const getCustomCakeImage = () => {
+    if (uploadedPreviewUrl) return uploadedPreviewUrl;
+    if (size.includes('Tier')) return '/images/product5.png';
+    if (flavor.includes('Red Velvet')) return '/images/cupcake.png';
+    if (flavor.includes('Fruit') || flavor.includes('Mango')) return '/images/product2.png';
+    if (selectedThemePreset.includes('Gold') || flavor.includes('Lava')) return '/images/home-cake.png';
+    return '/images/why-cake.png';
   };
 
   const handleAddCustomToCart = () => {
@@ -409,6 +421,7 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
             <div className="bg-stone-950 rounded-2xl overflow-hidden shadow-lg border border-stone-800">
               <div className="aspect-[4/3] relative">
                 <BakeryVisual
+                  src={getCustomCakeImage()}
                   type={size.includes('Tier') ? 'custom-tier' : 'chocolate-lava'}
                   title="Custom Cake Preview"
                   className="w-full h-full"

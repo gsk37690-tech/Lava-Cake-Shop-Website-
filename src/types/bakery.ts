@@ -23,6 +23,7 @@ export interface Product {
   reviewCount: number;
   preparationTimeHours: number;
   sizes: CakeSizeOption[];
+  imageUrl: string;
   visualTheme: {
     accentGradient: string;
     cakeType: 'chocolate-lava' | 'truffle' | 'fruit-gateau' | 'red-velvet' | 'butterscotch' | 'cookie' | 'bread' | 'cheesecake' | 'brownie';

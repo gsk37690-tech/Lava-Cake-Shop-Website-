@@ -73,7 +73,7 @@ export const ReviewsAndGallery: React.FC = () => {
               >
                 <div className="relative aspect-[4/3] bg-stone-950 overflow-hidden">
                   <BakeryVisual
-                    type={cake.occasion === 'Wedding' ? 'custom-tier' : cake.occasion === 'Anniversary' ? 'red-velvet' : 'truffle'}
+                    src={cake.imageUrl}
                     title={cake.title}
                     className="w-full h-full"
                   />

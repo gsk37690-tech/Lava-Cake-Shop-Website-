@@ -287,6 +287,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   {/* Lead with Imagery (65-70% visual height on top container) */}
                   <div className="relative aspect-[4/3] bg-stone-950 overflow-hidden">
                     <BakeryVisual
+                      src={product.imageUrl}
                       type={product.visualTheme.cakeType}
                       title={product.name}
                       className="w-full h-full"
