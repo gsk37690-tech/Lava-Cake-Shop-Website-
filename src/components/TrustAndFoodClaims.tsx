@@ -90,13 +90,13 @@ export const TrustAndFoodClaims: React.FC<TrustAndFoodClaimsProps> = ({
           </div>
           <div className="space-y-2 text-center md:text-left flex-1">
             <div className="text-xs font-bold uppercase tracking-wider text-[#9A3412]">
-              Artisanal Dedication · Tamil Nadu
+              Artisanal Dedication · Founded by Mr. K. Selvaraju
             </div>
             <h3 className="text-xl sm:text-2xl font-bold font-display text-stone-900">
-              Baked by Passionate Master Pastry Chefs
+              Formulated by Founder & Master Confectioner Mr. Selvaraju
             </h3>
             <p className="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl">
-              At Lava Cakes, every recipe is personally formulated and calibrated by our master pastry chefs. We reject industrial premixes and chemical shelf-life extenders. Each cake that leaves our ovens is freshly frosted with real dairy cream, Belgian chocolate, and pure butter so your family celebrations taste authentically exceptional.
+              At Lava Cakes, every recipe was personally created and perfected by our founder Mr. K. Selvaraju with 18+ years of confectionery mastery. We reject industrial premixes and chemical shelf-life extenders. Each cake that leaves our ovens is freshly frosted with real dairy cream, Belgian chocolate, and pure butter so your family celebrations taste authentically exceptional.
             </p>
             <div className="text-xs text-stone-500 font-medium pt-1">
               Serving Chennai, Coimbatore, Madurai, Salem, Trichy & Erode with pride.

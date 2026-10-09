@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Check, Sparkles, Plus, Info, AlertTriangle } from 'lucide-react';
+import { Search, Check, Sparkles, Plus } from 'lucide-react';
 import { Product, CakeSizeOption, CategoryId } from '../types/bakery';
 import { CATEGORIES } from '../data/categories';
 import { PRODUCTS } from '../data/products';
@@ -22,7 +22,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<CategoryId>('cakes');
   const [dietaryFilter, setDietaryFilter] = useState<'all' | 'eggless' | 'signature'>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showCopyComparison, setShowCopyComparison] = useState(false);
 
   // Per-product state for size selection and cake message
   const [productSelections, setProductSelections] = useState<
@@ -154,67 +153,22 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           })}
         </div>
 
-        {/* Polished Category Description Banner (Addresses Problem #1 & QA Proof) */}
+        {/* Polished Category Description Banner */}
         <div className="bg-[#F4ECE0] border border-[#E0D4C0] rounded-xl p-4 sm:p-5 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="space-y-1 max-w-3xl">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#9A3412]">
-                  {currentCategoryInfo.tagline}
-                </span>
-                <span className="text-stone-300">·</span>
-                <span className="text-xs text-stone-600 font-medium">
-                  {currentCategoryInfo.highlight}
-                </span>
-              </div>
-              <p className="text-stone-800 text-sm sm:text-base leading-relaxed font-medium">
-                {currentCategoryInfo.description}
-              </p>
+          <div className="space-y-1 max-w-3xl">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#9A3412]">
+                {currentCategoryInfo.tagline}
+              </span>
+              <span className="text-stone-300">·</span>
+              <span className="text-xs text-stone-600 font-medium">
+                {currentCategoryInfo.highlight}
+              </span>
             </div>
-
-            {/* QA Audit Toggle: Show before & after copy comparison */}
-            {currentCategoryInfo.originalBrokenCopy && (
-              <button
-                onClick={() => setShowCopyComparison(!showCopyComparison)}
-                className="self-start md:self-center px-3 py-1.5 rounded-lg border border-amber-800/30 bg-amber-50 text-xs font-medium text-amber-900 hover:bg-amber-100 transition-colors flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
-                title="View original indexing copy vs rewritten copy"
-              >
-                <Info className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                <span>{showCopyComparison ? 'Hide Copy Audit' : 'Audit Fix Comparison'}</span>
-              </button>
-            )}
+            <p className="text-stone-800 text-sm sm:text-base leading-relaxed font-medium">
+              {currentCategoryInfo.description}
+            </p>
           </div>
-
-          {/* Before & After comparison drawer if user toggles */}
-          {showCopyComparison && currentCategoryInfo.originalBrokenCopy && (
-            <div className="mt-4 pt-4 border-t border-[#DECFC0] grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-900">
-                <div className="flex items-center gap-1.5 font-bold text-red-700 mb-1">
-                  <AlertTriangle className="w-3.5 h-3.5" />
-                  <span>PREVIOUS INDEXED COPY (Problem #1)</span>
-                </div>
-                <p className="italic font-mono text-[11px] text-red-800">
-                  "{currentCategoryInfo.originalBrokenCopy}"
-                </p>
-                <p className="text-[10px] text-red-600 mt-1">
-                  Cause of customer churn: Looked like unfinished placeholder text.
-                </p>
-              </div>
-
-              <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900">
-                <div className="flex items-center gap-1.5 font-bold text-emerald-700 mb-1">
-                  <Check className="w-3.5 h-3.5" />
-                  <span>POLISHED PRODUCTION COPY (Fixed)</span>
-                </div>
-                <p className="font-sans text-[11px] text-emerald-900 font-medium">
-                  "{currentCategoryInfo.description}"
-                </p>
-                <p className="text-[10px] text-emerald-700 mt-1">
-                  Accurate, mouth-watering, grammatically impeccable bakery marketing.
-                </p>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Dietary / Quick Filter Bar */}

@@ -19,7 +19,6 @@ import { StandardsPage } from './pages/StandardsPage';
 import { BranchModal } from './components/BranchModal';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
-import { QAChecklistDrawer } from './components/QAChecklistDrawer';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -55,7 +54,6 @@ export default function App() {
   // Modals & Drawers
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-  const [isQADrawerOpen, setIsQADrawerOpen] = useState(false);
 
   // Order Placement & Tracker State
   const [latestOrder, setLatestOrder] = useState<OrderRecord | null>(null);
@@ -195,7 +193,6 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
         activePage={activePage}
         onNavigatePage={handleNavigatePage}
-        onOpenQAChecklist={() => setIsQADrawerOpen(true)}
       />
 
       {/* Page Routing Views (Distinct Pages, No Endless Single-Scroll) */}
@@ -203,9 +200,7 @@ export default function App() {
         {activePage === 'home' && (
           <HomePage
             selectedBranch={selectedBranch}
-            onOpenBranchModal={() => setIsBranchModalOpen(true)}
             onNavigatePage={handleNavigatePage}
-            onAddToCart={handleAddToCart}
           />
         )}
 
@@ -324,19 +319,9 @@ export default function App() {
         onOrderConfirmed={handleOrderConfirmed}
       />
 
-      <QAChecklistDrawer
-        isOpen={isQADrawerOpen}
-        onClose={() => setIsQADrawerOpen(false)}
-        onNavigatePage={handleNavigatePage}
-        onOpenBranchModal={() => setIsBranchModalOpen(true)}
-        onOpenCart={() => setIsCartOpen(true)}
-      />
-
       {/* Site Footer */}
       <Footer
-        onOpenBranchModal={() => setIsBranchModalOpen(true)}
         onNavigatePage={handleNavigatePage}
-        onOpenQAChecklist={() => setIsQADrawerOpen(true)}
       />
     </div>
   );

@@ -5,7 +5,6 @@ export interface CategoryInfo {
   name: string;
   tagline: string;
   description: string; // Polished, corrected marketing copy
-  originalBrokenCopy?: string; // For QA comparison if user wants to audit
   startingPrice: number;
   highlight: string;
 }
@@ -24,7 +23,6 @@ export const CATEGORIES: CategoryInfo[] = [
     name: 'Cookies',
     tagline: 'Freshly Baked Delights',
     description: 'Freshly baked cookies with delightful textures and flavours. Find your favourite treat for every craving.',
-    originalBrokenCopy: 'These Cookies another fat, like vegetable',
     startingPrice: 160,
     highlight: 'Twice-Baked & Gourmet Butter',
   },
@@ -33,7 +31,6 @@ export const CATEGORIES: CategoryInfo[] = [
     name: 'Bread & Bakery',
     tagline: 'Artisanal Breads & Buns',
     description: 'Discover our range of bakery favourites, freshly prepared for your everyday cravings. Explore available varieties at your nearest branch.',
-    originalBrokenCopy: 'These Bread add eggs, and then add flour',
     startingPrice: 85,
     highlight: 'Slow-Fermented & Daily Fresh',
   },
@@ -42,7 +39,6 @@ export const CATEGORIES: CategoryInfo[] = [
     name: 'Desserts',
     tagline: 'Indulgent Pastries & Pots',
     description: 'Treat yourself to irresistible desserts, rich chocolate delights and sweet favourites made for every occasion.',
-    originalBrokenCopy: 'These Desserts filled with Chocolate',
     startingPrice: 140,
     highlight: 'Warm Molten Lava & Fudgy Brownies',
   },

@@ -2,15 +2,11 @@ import React from 'react';
 import { PageId } from '../types/navigation';
 
 interface FooterProps {
-  onOpenBranchModal: () => void;
   onNavigatePage: (pageId: PageId) => void;
-  onOpenQAChecklist: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  onOpenBranchModal,
   onNavigatePage,
-  onOpenQAChecklist,
 }) => {
   return (
     <footer className="bg-[#1F100B] text-stone-300 border-t border-stone-800">
@@ -142,13 +138,15 @@ export const Footer: React.FC<FooterProps> = ({
             <p className="text-xs text-stone-400 leading-relaxed">
               Every celebration order is protected with temperature-controlled thermal delivery packaging and hygiene seals.
             </p>
-            <div className="pt-2">
-              <button
-                onClick={onOpenQAChecklist}
-                className="w-full py-2 px-3 bg-white/10 hover:bg-white/15 text-stone-200 text-xs font-medium rounded-lg border border-stone-700 transition-colors cursor-pointer text-center"
-              >
-                Website Launch QA Checklist
-              </button>
+            <div className="pt-1 space-y-1.5 text-xs text-stone-300">
+              <div className="flex items-center gap-2 text-stone-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>FSSAI Certified Kitchens</span>
+              </div>
+              <div className="flex items-center gap-2 text-stone-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span>Fresh Batch Daily Guarantee</span>
+              </div>
             </div>
           </div>
         </div>

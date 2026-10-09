@@ -11,7 +11,6 @@ interface HeaderProps {
   onOpenCart: () => void;
   activePage: PageId;
   onNavigatePage: (pageId: PageId) => void;
-  onOpenQAChecklist: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -22,7 +21,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenCart,
   activePage,
   onNavigatePage,
-  onOpenQAChecklist,
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DFC8]/70 transition-colors">
@@ -32,18 +30,11 @@ export const Header: React.FC<HeaderProps> = ({
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-500"></span>
           <span>9+ Gourmet Branches across Tamil Nadu</span>
         </div>
-        <div className="mx-auto md:mx-0 flex items-center gap-3">
+        <div className="mx-auto flex items-center gap-3">
           <span>Freshly Baked Daily · Same-Day Delivery available until 9:00 PM</span>
           <span className="hidden sm:inline text-stone-400">·</span>
           <span className="hidden sm:inline text-amber-300">100% Eggless Options</span>
         </div>
-        <button
-          onClick={onOpenQAChecklist}
-          className="hidden lg:flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 underline underline-offset-2 transition-colors cursor-pointer"
-          title="Open Website QA Checklist & Redesign Audit"
-        >
-          <span>QA Audit Checklist</span>
-        </button>
       </div>
 
       {/* Main 3-Zone Top Navigation Contract */}

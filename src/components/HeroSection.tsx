@@ -5,43 +5,18 @@ import { BakeryVisual } from './BakeryVisual';
 
 interface HeroSectionProps {
   selectedBranch: Branch;
-  onOpenBranchModal: () => void;
   onExploreCakes: () => void;
   onOpenCustomBuilder: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   selectedBranch,
-  onOpenBranchModal,
   onExploreCakes,
   onOpenCustomBuilder,
 }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-[#F5EFE6] to-[#FAF7F2] border-b border-[#E8DFC8]/70 pt-8 pb-12 sm:pt-14 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Branch Context Strip */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 bg-[#EFE7D8]/80 border border-[#DFD3BE] rounded-xl px-4 py-2.5 text-xs text-stone-800">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-            <span className="font-semibold text-stone-900">Current Serving Branch:</span>
-            <span className="text-[#9A3412] font-bold">{selectedBranch.name}</span>
-            <span className="text-stone-400 hidden sm:inline">({selectedBranch.city})</span>
-          </div>
-          <div className="flex items-center gap-4 text-stone-600">
-            <span className="hidden md:flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-stone-500" />
-              {selectedBranch.openingHours}
-            </span>
-            <button
-              onClick={onOpenBranchModal}
-              className="text-[#9A3412] font-semibold hover:underline flex items-center gap-1 cursor-pointer"
-            >
-              <MapPin className="w-3.5 h-3.5" />
-              Change Branch
-            </button>
-          </div>
-        </div>
-
         {/* Hero Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Direct Craving & Action Copy */}
