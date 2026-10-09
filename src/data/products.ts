@@ -186,7 +186,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.91,
     reviewCount: 142,
     preparationTimeHours: 1,
-    imageUrl: '/images/product3.png',
+    imageUrl: '/images/cookies.png',
     sizes: [
       { label: 'Box of 4', weight: '200g', serves: 'Snack for 2', price: 180 },
       { label: 'Box of 8', weight: '400g', serves: 'Family Pack', price: 340 },
@@ -212,7 +212,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.86,
     reviewCount: 98,
     preparationTimeHours: 1,
-    imageUrl: '/images/product2.png',
+    imageUrl: '/images/cookie-single.png',
     sizes: [
       { label: 'Gift Pack', weight: '250g', serves: 'Tea Time Treat', price: 195 },
       { label: 'Family Tin', weight: '500g', serves: 'Generous Tin', price: 370 },
@@ -237,7 +237,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.84,
     reviewCount: 86,
     preparationTimeHours: 1,
-    imageUrl: '/images/product4.png',
+    imageUrl: '/images/cookies-plate.png',
     sizes: [
       { label: 'Airtight Jar', weight: '220g', serves: '16 Biscotti Fingers', price: 210 },
       { label: 'Large Jar', weight: '450g', serves: '32 Biscotti Fingers', price: 395 },

@@ -56,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               cat.id === 'cakes'
                 ? '/images/home-cake.png'
                 : cat.id === 'cookies'
-                ? '/images/why-cake.png'
+                ? '/images/cookies.png'
                 : cat.id === 'bread'
                 ? '/images/product2.png'
                 : '/images/product3.png';

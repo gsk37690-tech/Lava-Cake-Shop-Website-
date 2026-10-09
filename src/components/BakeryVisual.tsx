@@ -14,7 +14,7 @@ const TYPE_TO_IMAGE: Record<string, string> = {
   'fruit-gateau': '/images/product2.png',
   'red-velvet': '/images/cupcake.png',
   'butterscotch': '/images/product1.png',
-  'cookie': '/images/product3.png',
+  'cookie': '/images/cookies.png',
   'bread': '/images/product2.png',
   'cheesecake': '/images/product4.png',
   'brownie': '/images/product3.png',
